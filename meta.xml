@@ -1,0 +1,148 @@
+<meta>
+    <info
+        author="Kalil M. Santos"
+        name="core_radar"
+        version="2.0.0-refatorado"
+        type="script"
+        description="Radar refatorado com API client/server para GPS, destinos e blips customizados." />
+
+    <min_mta_version server="1.3.4-0.00000" client="1.3.4-0.00000" />
+
+    <script src="shared/constants.lua" type="shared" cache="false" />
+    <script src="gps/street_g.lua" type="shared" />
+
+    <script src="client/core/state.lua" type="client" cache="false" />
+    <script src="gps/streetTable_g.lua" type="client" cache="false" />
+    <script src="gps/gps_r.lua" type="client" cache="false" />
+    <script src="client/class/map.lua" type="client" cache="false" />
+    <script src="client/main.lua" type="client" cache="false" />
+    <script src="client/b_sourceC.lua" type="client" cache="false" />
+    <script src="client/api.lua" type="client" cache="false" />
+
+    <script src="server/player_blips.lua" type="server" />
+    <script src="server/api.lua" type="server" />
+
+    <file src="gfx/background.png" />
+    <file src="gfx/gtasa.png" />
+    <file src="gfx/gtasa_old.png" />
+    <file src="gfx/H.png" />
+    <file src="gfx/HR.png" />
+    <file src="gfx/jato.png" />
+    <file src="gfx/mapbg.png" />
+    <file src="gfx/mapred.png" />
+    <file src="gfx/myriadproregular.ttf" />
+
+    <file src="gfx/icons/0.png" />
+    <file src="gfx/icons/1.png" />
+    <file src="gfx/icons/2.png" />
+    <file src="gfx/icons/3.png" />
+    <file src="gfx/icons/4.png" />
+    <file src="gfx/icons/5.png" />
+    <file src="gfx/icons/6.png" />
+    <file src="gfx/icons/7.png" />
+    <file src="gfx/icons/8.png" />
+    <file src="gfx/icons/9.png" />
+    <file src="gfx/icons/10.png" />
+    <file src="gfx/icons/11.png" />
+    <file src="gfx/icons/12.png" />
+    <file src="gfx/icons/13.png" />
+    <file src="gfx/icons/14.png" />
+    <file src="gfx/icons/15.png" />
+    <file src="gfx/icons/16.png" />
+    <file src="gfx/icons/17.png" />
+    <file src="gfx/icons/18.png" />
+    <file src="gfx/icons/19.png" />
+    <file src="gfx/icons/20.png" />
+    <file src="gfx/icons/21.png" />
+    <file src="gfx/icons/22.png" />
+    <file src="gfx/icons/23.png" />
+    <file src="gfx/icons/24.png" />
+    <file src="gfx/icons/25.png" />
+    <file src="gfx/icons/26.png" />
+    <file src="gfx/icons/27.png" />
+    <file src="gfx/icons/28.png" />
+    <file src="gfx/icons/29.png" />
+    <file src="gfx/icons/30.png" />
+    <file src="gfx/icons/31.png" />
+    <file src="gfx/icons/32.png" />
+    <file src="gfx/icons/33.png" />
+    <file src="gfx/icons/34.png" />
+    <file src="gfx/icons/35.png" />
+    <file src="gfx/icons/36.png" />
+    <file src="gfx/icons/37.png" />
+    <file src="gfx/icons/38.png" />
+    <file src="gfx/icons/39.png" />
+    <file src="gfx/icons/40.png" />
+    <file src="gfx/icons/41.png" />
+    <file src="gfx/icons/42.png" />
+    <file src="gfx/icons/43.png" />
+    <file src="gfx/icons/44.png" />
+    <file src="gfx/icons/45.png" />
+    <file src="gfx/icons/46.png" />
+    <file src="gfx/icons/47.png" />
+    <file src="gfx/icons/48.png" />
+    <file src="gfx/icons/49.png" />
+    <file src="gfx/icons/50.png" />
+    <file src="gfx/icons/51.png" />
+    <file src="gfx/icons/52.png" />
+    <file src="gfx/icons/53.png" />
+    <file src="gfx/icons/54.png" />
+    <file src="gfx/icons/55.png" />
+    <file src="gfx/icons/56.png" />
+    <file src="gfx/icons/57.png" />
+    <file src="gfx/icons/58.png" />
+    <file src="gfx/icons/59.png" />
+    <file src="gfx/icons/60.png" />
+    <file src="gfx/icons/61.png" />
+    <file src="gfx/icons/62.png" />
+    <file src="gfx/icons/63.png" />
+    <file src="gfx/icons/162.png" />
+    <file src="gfx/icons/down.png" />
+    <file src="gfx/icons/radar_dateFood.png" />
+    <file src="gfx/icons/square.png" />
+    <file src="gfx/icons/up.png" />
+
+    <export function="definirDestinoRadar" type="client" />
+    <export function="definirDestinoRadarPorCoordenada" type="client" />
+    <export function="definirDestinoPorElemento" type="client" />
+    <export function="definirDestinoPorBlip" type="client" />
+    <export function="rastrearDestinoPorElemento" type="client" />
+    <export function="limparDestinoRadar" type="client" />
+    <export function="existeDestinoRadar" type="client" />
+    <export function="obterDestinoRadar" type="client" />
+    <export function="criarBlipCustomizado" type="client" />
+    <export function="definirIconeBlipCustomizado" type="client" />
+    <export function="removerBlipCustomizado" type="client" />
+    <export function="criarRastreadorElemento" type="client" />
+    <export function="removerRastreadorElemento" type="client" />
+
+    <export function="createCustomBlip" type="client" />
+    <export function="setBlipCustomIcon" type="client" />
+    <export function="destroyCustomBlip" type="client" />
+    <export function="setGPSDestination" type="client" />
+    <export function="clearGPSDestination" type="client" />
+    <export function="hasGPSDestination" type="client" />
+    <export function="getGPSDestination" type="client" />
+    <export function="setGPSDestinationByElement" type="client" />
+    <export function="setGPSDestinationByBlip" type="client" />
+    <export function="trackElement" type="client" />
+    <export function="untrackElement" type="client" />
+
+    <export function="definirDestinoJogador" type="server" />
+    <export function="definirDestinoJogadorPorElemento" type="server" />
+    <export function="definirDestinoJogadorPorBlip" type="server" />
+    <export function="rastrearDestinoJogadorPorElemento" type="server" />
+    <export function="limparDestinoJogador" type="server" />
+    <export function="jogadorTemDestino" type="server" />
+    <export function="obterDestinoJogador" type="server" />
+    <export function="criarBlipCustomizado" type="server" />
+    <export function="definirIconeBlipCustomizado" type="server" />
+    <export function="removerBlipCustomizado" type="server" />
+
+    <export function="setPlayerGPSDestination" type="server" />
+    <export function="setPlayerGPSDestinationByElement" type="server" />
+    <export function="setPlayerGPSDestinationByBlip" type="server" />
+    <export function="clearPlayerGPSDestination" type="server" />
+    <export function="playerHasGPSDestination" type="server" />
+    <export function="getPlayerGPSDestination" type="server" />
+</meta>
